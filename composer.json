@@ -32,8 +32,14 @@
       "BSICards\\": "src/"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "BSICards\\Tests\\": "tests/"
+    }
+  },
   "scripts": {
-    "test": "phpunit",
+    "test": "phpunit tests/",
+    "test-coverage": "phpunit --coverage-html build/coverage tests/",
     "analyse": "phpstan analyse src tests"
   }
 }

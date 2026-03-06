@@ -38,9 +38,11 @@ jobs:
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
 
-    - name: Run PHPUnit tests
+    - name: Run tests
       run: composer test
 
-    - name: Run PHPStan analysis
+    - name: Run code analysis
       run: composer analyse
+
+
 
