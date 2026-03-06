@@ -10,13 +10,12 @@ on:
 jobs:
   notify-packagist:
     runs-on: ubuntu-latest
-    if: ${{ secrets.PACKAGIST_USERNAME != '' && secrets.PACKAGIST_TOKEN != '' && secrets.PACKAGIST_PACKAGE_URL != '' }}
+    if: ${{ secrets.PACKAGIST_TOKEN != '' }}
 
     steps:
       - name: Trigger Packagist update
         run: |
           curl -X POST \
-            -H "Content-Type:application/json" \
-            "https://packagist.org/api/update-package?username=${{ secrets.PACKAGIST_USERNAME }}&apiToken=${{ secrets.PACKAGIST_TOKEN }}" \
-            -d "{\"repository\":{\"url\":\"${{ secrets.PACKAGIST_PACKAGE_URL }}\"}}"
-
+            -H "Content-Type: application/json" \
+            "https://packagist.org/api/update-package?username=nash81&apiToken=${{ secrets.PACKAGIST_TOKEN }}" \
+            -d '{"repository":{"url":"https://github.com/nash81/bsicards-php-sdk"}}'

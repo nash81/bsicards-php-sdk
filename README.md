@@ -44,11 +44,10 @@ If Packagist shows "This package is not auto-updated", set up one of the followi
    - Packagist will create/manage the webhook
 
 2. GitHub Actions fallback (included in this repo)
-   - Add these GitHub repository secrets:
-     - `PACKAGIST_USERNAME`
+   - Add this GitHub repository secret:
      - `PACKAGIST_TOKEN`
-     - `PACKAGIST_PACKAGE_URL` (example: `https://packagist.org/packages/nash81/bsicards-php-sdk`)
    - Workflow file: `.github/workflows/packagist-update.yml`
+   - This workflow pings Packagist for `https://github.com/nash81/bsicards-php-sdk` on push/release
 
 ### Manual Setup
 

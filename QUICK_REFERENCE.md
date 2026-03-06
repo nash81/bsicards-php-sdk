@@ -164,7 +164,7 @@ All responses follow this structure:
 3. Create tag: `git tag -a v1.0.0`
 4. Register: https://packagist.org -> Submit
 5. Enable auto-update in Packagist (`Update` / `Auto Update`) for `nash81/bsicards-php-sdk`
-6. Optional fallback: add GitHub secrets (`PACKAGIST_USERNAME`, `PACKAGIST_TOKEN`, `PACKAGIST_PACKAGE_URL`) for `.github/workflows/packagist-update.yml`
+6. Optional fallback: add GitHub secret `PACKAGIST_TOKEN` for `.github/workflows/packagist-update.yml`
 
 ---
 

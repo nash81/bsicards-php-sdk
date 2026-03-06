@@ -138,7 +138,5 @@ If Packagist says your package is not auto-updated, enable one-time setup:
 
 Optional fallback (already added in this SDK):
 - Workflow: `.github/workflows/packagist-update.yml`
-- Add GitHub repository secrets:
-  - `PACKAGIST_USERNAME`
+- Add GitHub repository secret:
   - `PACKAGIST_TOKEN`
-  - `PACKAGIST_PACKAGE_URL` (example: `https://packagist.org/packages/nash81/bsicards-php-sdk`)
