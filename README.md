@@ -299,7 +299,7 @@ This SDK is released under the MIT License. See [LICENSE](LICENSE) for details.
 
 For issues, questions, or support:
 
-- Email: support@bsigroup.tech
+- Email: cs@bsigroup.tech
 - Website: https://www.bsigroup.tech
 - Documentation: See `/docs` directory
 

@@ -125,6 +125,6 @@ On Windows, you may need to download CA certificates:
 ## Getting Help
 
 - Documentation: See `/docs` directory
-- Email: support@bsigroup.tech
+- Email: cs@bsigroup.tech
 - Website: https://www.bsigroup.tech
 

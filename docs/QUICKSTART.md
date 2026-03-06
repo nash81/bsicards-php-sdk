@@ -119,7 +119,7 @@ You're now ready to use the BSICARDS SDK. For more details, see:
 
 - Check [API.md](docs/API.md) for all available methods
 - Review [EXAMPLES.md](docs/EXAMPLES.md) for code samples
-- Email: support@bsigroup.tech
+- Email: cs@bsigroup.tech
 - Website: https://www.bsigroup.tech
 
 ## Common Tasks

@@ -180,7 +180,7 @@ $secret = $client->getSecretKey();
 
 ## Support
 
-- Email: support@bsigroup.tech
+- Email: cs@bsigroup.tech
 - Website: https://www.bsigroup.tech
 - GitHub: https://github.com/nash81/bsicards-php-sdk
 
