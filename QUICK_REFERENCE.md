@@ -188,5 +188,5 @@ $secret = $client->getSecretKey();
 
 **Version**: 1.0.0
 **License**: MIT
-**PHP**: 7.4+
+**PHP**: 8.1+
 

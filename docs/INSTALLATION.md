@@ -2,7 +2,7 @@
 
 ## System Requirements
 
-- **PHP**: Version 7.4 or higher
+- **PHP**: Version 8.1 or higher
 - **Composer**: Latest version
 - **Curl**: For making HTTP requests (usually included)
 

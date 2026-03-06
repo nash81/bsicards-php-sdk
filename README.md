@@ -21,7 +21,7 @@ A comprehensive PHP SDK for integrating with the BSICARDS Card Issuance API. Cre
 
 ## Requirements
 
-- PHP >= 7.4
+- PHP >= 8.1
 - Composer
 - GuzzleHTTP 7.0+
 
