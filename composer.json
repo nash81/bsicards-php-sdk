@@ -1,0 +1,40 @@
+{
+  "name": "bsigroup/bsicards-sdk",
+  "description": "PHP SDK for BSICARDS - Card Issuance API",
+  "type": "library",
+  "version": "1.0.0",
+  "license": "MIT",
+  "keywords": [
+    "bsicards",
+    "card-issuance",
+    "mastercard",
+    "visa",
+    "digital-wallet",
+    "api",
+    "sdk"
+  ],
+  "authors": [
+    {
+      "name": "BSI Group",
+      "email": "support@bsigroup.tech"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "guzzlehttp/guzzle": "^7.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.5",
+    "phpstan/phpstan": "^1.8"
+  },
+  "autoload": {
+    "psr-4": {
+      "BSICards\\": "src/"
+    }
+  },
+  "scripts": {
+    "test": "phpunit",
+    "analyse": "phpstan analyse src tests"
+  }
+}
+
