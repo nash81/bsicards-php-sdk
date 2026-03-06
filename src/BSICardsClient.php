@@ -496,23 +496,6 @@ class BSICardsClient
         ]);
     }
 
-    /**
-     * Get Digital Wallet card transactions
-     *
-     * @param string $userEmail User email
-     * @param string $cardId Card ID
-     *
-     * @return array API response
-     * @throws APIException
-     */
-    public function digitalGetTransactions(string $userEmail, string $cardId): array
-    {
-        return $this->post('digitalgetvirtualcardtransactions', [
-            'useremail' => $userEmail,
-            'cardid' => $cardId,
-        ]);
-    }
-
 
     /**
      * Fund a Digital Wallet card
@@ -562,6 +545,108 @@ class BSICardsClient
     public function digitalUnfreezeCard(string $userEmail, string $cardId): array
     {
         return $this->post('digitalunblockcard', [
+            'useremail' => $userEmail,
+            'cardid' => $cardId,
+        ]);
+    }
+
+    /**
+     * Check 3DS verification status
+     *
+     * @param string $userEmail User email
+     *
+     * @return array API response
+     * @throws APIException
+     */
+    public function digitalCheck3DS(string $userEmail): array
+    {
+        return $this->post('checkwallet', [
+            'useremail' => $userEmail,
+        ]);
+    }
+
+    /**
+     * Approve 3DS transaction
+     *
+     * @param string $userEmail User email
+     * @param string $cardId Card ID
+     * @param string $eventId Event ID from 3DS authorization
+     *
+     * @return array API response
+     * @throws APIException
+     */
+    public function digitalApprove3DS(string $userEmail, string $cardId, string $eventId): array
+    {
+        return $this->post('approve3ds', [
+            'useremail' => $userEmail,
+            'cardid' => $cardId,
+            'eventId' => $eventId,
+        ]);
+    }
+
+    /**
+     * Terminate a Digital Wallet card
+     *
+     * @param string $userEmail User email
+     * @param string $cardId Card ID
+     *
+     * @return array API response
+     * @throws APIException
+     */
+    public function digitalTerminateCard(string $userEmail, string $cardId): array
+    {
+        return $this->post('terminatedigitalcard', [
+            'useremail' => $userEmail,
+            'cardid' => $cardId,
+        ]);
+    }
+
+    /**
+     * Create an add-on card under the same balance
+     *
+     * @param string $userEmail User email
+     * @param string $cardId Parent card ID
+     *
+     * @return array API response
+     * @throws APIException
+     */
+    public function digitalCreateAddonCard(string $userEmail, string $cardId): array
+    {
+        return $this->post('createaddon', [
+            'useremail' => $userEmail,
+            'cardid' => $cardId,
+        ]);
+    }
+
+    /**
+     * Get Digital Wallet card loyalty points
+     *
+     * @param string $userEmail User email
+     * @param string $cardId Card ID
+     *
+     * @return array API response
+     * @throws APIException
+     */
+    public function digitalGetLoyaltyPoints(string $userEmail, string $cardId): array
+    {
+        return $this->post('digitalcardpoints', [
+            'useremail' => $userEmail,
+            'cardid' => $cardId,
+        ]);
+    }
+
+    /**
+     * Redeem Digital Wallet card loyalty points
+     *
+     * @param string $userEmail User email
+     * @param string $cardId Card ID
+     *
+     * @return array API response
+     * @throws APIException
+     */
+    public function digitalRedeemPoints(string $userEmail, string $cardId): array
+    {
+        return $this->post('redeempoints', [
             'useremail' => $userEmail,
             'cardid' => $cardId,
         ]);

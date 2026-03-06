@@ -53,10 +53,15 @@ BSICARDS_SECRET_KEY=your_secret
 | `digitalCreateVirtualCard(...)` | Create card |
 | `digitalGetAllCards($email)` | Get all cards |
 | `digitalGetCard($email, $cardId)` | Get card details |
-| `digitalGetTransactions($email, $cardId)` | View transactions |
 | `digitalFundCard($email, $cardId, $amount)` | Fund card |
 | `digitalFreezeCard($email, $cardId)` | Freeze card |
 | `digitalUnfreezeCard($email, $cardId)` | Unfreeze card |
+| `digitalCheck3DS($email)` | Check 3DS verification |
+| `digitalApprove3DS($email, $cardId, $eventId)` | Approve 3DS transaction |
+| `digitalTerminateCard($email, $cardId)` | Terminate card |
+| `digitalCreateAddonCard($email, $cardId)` | Create add-on card |
+| `digitalGetLoyaltyPoints($email, $cardId)` | Get loyalty points |
+| `digitalRedeemPoints($email, $cardId)` | Redeem loyalty points |
 
 ---
 

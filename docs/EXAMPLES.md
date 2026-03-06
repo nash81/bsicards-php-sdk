@@ -151,6 +151,81 @@ $response = $client->digitalCreateVirtualCard(
 );
 ```
 
+### Fund Virtual Card
+
+```php
+$response = $client->digitalFundCard(
+    'user@example.com',
+    'card-id-123',
+    '50.00'
+);
+```
+
+### Check 3DS Verification
+
+```php
+$response = $client->digitalCheck3DS('user@example.com');
+
+if ($response['code'] == 200) {
+    echo "3DS Status: " . $response['data']['status'];
+}
+```
+
+### Approve 3DS Transaction
+
+```php
+$response = $client->digitalApprove3DS(
+    'user@example.com',
+    'card-id-123',
+    'event-id-from-3ds-request'
+);
+
+echo "3DS Approval: " . $response['message'];
+```
+
+### Terminate Card
+
+```php
+$response = $client->digitalTerminateCard(
+    'user@example.com',
+    'card-id-123'
+);
+
+echo "Card Status: " . $response['message'];
+```
+
+### Create Add-on Card
+
+```php
+$response = $client->digitalCreateAddonCard(
+    'user@example.com',
+    'parent-card-id-123'
+);
+
+// Add-on cards share the same balance as parent card
+// Charged $4.50 per card
+echo "Add-on Card Created: " . $response['message'];
+```
+
+### Get and Redeem Loyalty Points
+
+```php
+// Get loyalty points balance
+$points = $client->digitalGetLoyaltyPoints(
+    'user@example.com',
+    'card-id-123'
+);
+
+echo "Available Points: " . $points['data']['balance'];
+
+// Redeem loyalty points
+$redeem = $client->digitalRedeemPoints(
+    'user@example.com',
+    'card-id-123'
+);
+
+echo "Redemption Status: " . $redeem['message'];
+```
 
 ## Laravel Examples
 

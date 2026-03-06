@@ -216,16 +216,28 @@ $client->digitalGetAllCards($email);
 // Get specific card
 $client->digitalGetCard($email, $cardId);
 
-// Get transactions
-$client->digitalGetTransactions($email, $cardId);
-
-
 // Fund card
 $client->digitalFundCard($email, $cardId, $amount);
 
 // Freeze/Unfreeze
 $client->digitalFreezeCard($email, $cardId);
 $client->digitalUnfreezeCard($email, $cardId);
+
+// Check 3DS verification
+$client->digitalCheck3DS($email);
+
+// Approve 3DS transaction
+$client->digitalApprove3DS($email, $cardId, $eventId);
+
+// Terminate card
+$client->digitalTerminateCard($email, $cardId);
+
+// Create add-on card
+$client->digitalCreateAddonCard($email, $cardId);
+
+// Loyalty points
+$client->digitalGetLoyaltyPoints($email, $cardId);
+$client->digitalRedeemPoints($email, $cardId);
 ```
 
 ## Error Handling

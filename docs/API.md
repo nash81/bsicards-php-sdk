@@ -329,18 +329,6 @@ $response = $client->digitalGetCard(
 
 ---
 
-### Get Digital Card Transactions
-
-```php
-$response = $client->digitalGetTransactions(
-    string $userEmail,
-    string $cardId
-): array
-```
-
----
-
-
 ### Fund Digital Card
 
 ```php
@@ -368,6 +356,77 @@ $response = $client->digitalFreezeCard(
 
 ```php
 $response = $client->digitalUnfreezeCard(
+    string $userEmail,
+    string $cardId
+): array
+```
+
+---
+
+### Check 3DS Verification
+
+```php
+$response = $client->digitalCheck3DS(
+    string $userEmail
+): array
+```
+
+---
+
+### Approve 3DS Transaction
+
+```php
+$response = $client->digitalApprove3DS(
+    string $userEmail,
+    string $cardId,
+    string $eventId
+): array
+```
+
+**Parameters:**
+- `$eventId` (string): Event ID from 3DS authorization request
+
+---
+
+### Terminate Digital Card
+
+```php
+$response = $client->digitalTerminateCard(
+    string $userEmail,
+    string $cardId
+): array
+```
+
+---
+
+### Create Add-on Card
+
+```php
+$response = $client->digitalCreateAddonCard(
+    string $userEmail,
+    string $cardId
+): array
+```
+
+**Note:** Add-on cards are charged $4.50 per card and share the same balance as the parent card.
+
+---
+
+### Get Loyalty Points
+
+```php
+$response = $client->digitalGetLoyaltyPoints(
+    string $userEmail,
+    string $cardId
+): array
+```
+
+---
+
+### Redeem Loyalty Points
+
+```php
+$response = $client->digitalRedeemPoints(
     string $userEmail,
     string $cardId
 ): array
