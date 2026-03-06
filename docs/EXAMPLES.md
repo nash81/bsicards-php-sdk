@@ -414,3 +414,50 @@ $client->setSecretKey('secret2');
 $cards2 = $client->mastercardGetAllCards('user2@example.com');
 ```
 
+## Administrator Operations
+
+### Get Wallet Balance
+
+```php
+$response = $client->getWalletBalance();
+
+if ($response['code'] == 200) {
+    echo "Wallet Balance: " . $response['data']['balance'];
+}
+```
+
+### Get All Deposits
+
+```php
+$response = $client->getDeposits();
+
+foreach ($response['data'] as $deposit) {
+    echo "Deposit: " . $deposit['amount'] . " on " . $deposit['created_at'];
+}
+```
+
+### Get All Transactions
+
+```php
+$response = $client->getTransactions();
+
+if ($response['code'] == 200) {
+    echo "Total Transactions: " . count($response['data']);
+}
+```
+
+### Get All Card Types
+
+```php
+// Get all Visa cards
+$visaCards = $client->getAllVisaCards();
+echo "Total Visa Cards: " . count($visaCards['data']);
+
+// Get all MasterCards
+$mastercards = $client->getAllMastercards();
+echo "Total MasterCards: " . count($mastercards['data']);
+
+// Get all Digital cards
+$digitalCards = $client->getAllDigitalCards();
+echo "Total Digital Cards: " . count($digitalCards['data']);
+```

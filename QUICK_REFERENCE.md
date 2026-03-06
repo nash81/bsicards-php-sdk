@@ -63,6 +63,17 @@ BSICARDS_SECRET_KEY=your_secret
 | `digitalGetLoyaltyPoints($email, $cardId)` | Get loyalty points |
 | `digitalRedeemPoints($email, $cardId)` | Redeem loyalty points |
 
+## Administrator Methods
+
+| Method | Purpose |
+|--------|---------|
+| `getWalletBalance()` | Get wallet balance |
+| `getDeposits()` | Get all deposits |
+| `getTransactions()` | Get all transactions |
+| `getAllVisaCards()` | Get all Visa cards |
+| `getAllMastercards()` | Get all MasterCards |
+| `getAllDigitalCards()` | Get all Digital cards |
+
 ---
 
 ## Common Examples

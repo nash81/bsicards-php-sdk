@@ -221,10 +221,62 @@ $response = $client->visaGetCard(
 
 ---
 
-### Get Visa Card Transactions
+## Administrator Operations
+
+Admin methods retrieve account-wide data without requiring user email.
+
+### Get Wallet Balance
 
 ```php
-$response = $client->visaGetTransactions(
+$response = $client->getWalletBalance(): array
+```
+
+---
+
+### Get Deposits
+
+```php
+$response = $client->getDeposits(): array
+```
+
+---
+
+### Get Transactions
+
+```php
+$response = $client->getTransactions(): array
+```
+
+---
+
+### Get All Visa Cards
+
+```php
+$response = $client->getAllVisaCards(): array
+```
+
+---
+
+### Get All MasterCards
+
+```php
+$response = $client->getAllMastercards(): array
+```
+
+---
+
+### Get All Digital Cards
+
+```php
+$response = $client->getAllDigitalCards(): array
+```
+
+---
+
+## Error Handling
+
+```php
+use BSICards\APIException;
     string $userEmail,
     string $cardId
 ): array

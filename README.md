@@ -240,6 +240,28 @@ $client->digitalGetLoyaltyPoints($email, $cardId);
 $client->digitalRedeemPoints($email, $cardId);
 ```
 
+### Administrator Operations
+
+```php
+// Get wallet balance
+$balance = $client->getWalletBalance();
+
+// Get all deposits
+$deposits = $client->getDeposits();
+
+// Get all transactions
+$transactions = $client->getTransactions();
+
+// Get all Visa cards
+$visaCards = $client->getAllVisaCards();
+
+// Get all MasterCards
+$mastercards = $client->getAllMastercards();
+
+// Get all Digital cards
+$digitalCards = $client->getAllDigitalCards();
+```
+
 ## Error Handling
 
 ```php

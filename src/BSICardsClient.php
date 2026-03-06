@@ -653,6 +653,76 @@ class BSICardsClient
     }
 
     // ========================
+    // ADMINISTRATOR METHODS
+    // ========================
+
+    /**
+     * Get wallet balance
+     *
+     * @return array API response
+     * @throws APIException
+     */
+    public function getWalletBalance(): array
+    {
+        return $this->get('admin/balance');
+    }
+
+    /**
+     * Get deposits
+     *
+     * @return array API response
+     * @throws APIException
+     */
+    public function getDeposits(): array
+    {
+        return $this->get('admin/deposits');
+    }
+
+    /**
+     * Get all transactions
+     *
+     * @return array API response
+     * @throws APIException
+     */
+    public function getTransactions(): array
+    {
+        return $this->get('admin/transactions');
+    }
+
+    /**
+     * Get all Visa cards
+     *
+     * @return array API response
+     * @throws APIException
+     */
+    public function getAllVisaCards(): array
+    {
+        return $this->get('admin/visacards');
+    }
+
+    /**
+     * Get all MasterCards
+     *
+     * @return array API response
+     * @throws APIException
+     */
+    public function getAllMastercards(): array
+    {
+        return $this->get('admin/mastercards');
+    }
+
+    /**
+     * Get all Digital Cards
+     *
+     * @return array API response
+     * @throws APIException
+     */
+    public function getAllDigitalCards(): array
+    {
+        return $this->get('admin/digitalcards');
+    }
+
+    // ========================
     // UTILITY METHODS
     // ========================
 
