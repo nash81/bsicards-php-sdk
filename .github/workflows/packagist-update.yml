@@ -10,10 +10,10 @@ on:
 jobs:
   notify-packagist:
     runs-on: ubuntu-latest
-    if: ${{ secrets.PACKAGIST_TOKEN != '' }}
 
     steps:
       - name: Trigger Packagist update
+        if: ${{ secrets.PACKAGIST_TOKEN }}
         run: |
           curl -X POST \
             -H "Content-Type: application/json" \
