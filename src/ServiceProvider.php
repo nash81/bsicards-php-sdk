@@ -9,15 +9,23 @@ namespace BSICards;
  * It's optional and the SDK works without it.
  */
 if (class_exists('Illuminate\Support\ServiceProvider')) {
+    /**
+     * @psalm-suppress InvalidStringClass
+     */
     class ServiceProvider extends \Illuminate\Support\ServiceProvider
     {
         /**
          * Register services
+         *
+         * @return void
          */
         public function register(): void
         {
+            // @phpstan-ignore-next-line
             $this->app->singleton(BSICardsClient::class, function ($app) {
+                // @phpstan-ignore-next-line
                 $publicKey = config('bsicards.public_key') ?? env('BSICARDS_PUBLIC_KEY');
+                // @phpstan-ignore-next-line
                 $secretKey = config('bsicards.secret_key') ?? env('BSICARDS_SECRET_KEY');
 
                 return new BSICardsClient($publicKey, $secretKey);
@@ -26,9 +34,12 @@ if (class_exists('Illuminate\Support\ServiceProvider')) {
 
         /**
          * Boot services
+         *
+         * @return void
          */
         public function boot(): void
         {
+            // @phpstan-ignore-next-line
             $this->publishes([
                 __DIR__ . '/../config/bsicards.php' => config_path('bsicards.php'),
             ], 'bsicards-config');
@@ -37,10 +48,11 @@ if (class_exists('Illuminate\Support\ServiceProvider')) {
 } else {
     /**
      * Stub class if Laravel is not installed
+     * Allows the SDK to work without Laravel
      */
     class ServiceProvider
     {
-        // This is a stub - Laravel not available
+        // Laravel not available - stub implementation
     }
 }
 

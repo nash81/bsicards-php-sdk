@@ -44,7 +44,7 @@
   "scripts": {
     "test": "phpunit tests/",
     "test-coverage": "phpunit --coverage-html build/coverage tests/",
-    "analyse": "phpstan analyse src tests"
+    "analyse": "phpstan analyse --configuration=phpstan.neon"
   }
 }
 
