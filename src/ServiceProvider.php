@@ -21,11 +21,8 @@ if (class_exists('Illuminate\Support\ServiceProvider')) {
          */
         public function register(): void
         {
-            // @phpstan-ignore-next-line
             $this->app->singleton(BSICardsClient::class, function ($app) {
-                // @phpstan-ignore-next-line
                 $publicKey = config('bsicards.public_key') ?? env('BSICARDS_PUBLIC_KEY');
-                // @phpstan-ignore-next-line
                 $secretKey = config('bsicards.secret_key') ?? env('BSICARDS_SECRET_KEY');
 
                 return new BSICardsClient($publicKey, $secretKey);
@@ -39,7 +36,6 @@ if (class_exists('Illuminate\Support\ServiceProvider')) {
          */
         public function boot(): void
         {
-            // @phpstan-ignore-next-line
             $this->publishes([
                 __DIR__ . '/../config/bsicards.php' => config_path('bsicards.php'),
             ], 'bsicards-config');
