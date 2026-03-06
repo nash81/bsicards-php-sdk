@@ -11,7 +11,7 @@
 ### 1. Install via Composer (Recommended)
 
 ```bash
-composer require bsigroup/bsicards-sdk
+composer require nash81/bsicards-php-sdk
 ```
 
 This will automatically:

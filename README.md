@@ -30,7 +30,7 @@ A comprehensive PHP SDK for integrating with the BSICARDS Card Issuance API. Cre
 ### Via Composer
 
 ```bash
-composer require bsigroup/bsicards-sdk
+composer require nash81/bsicards-php-sdk
 ```
 
 ### Manual Setup

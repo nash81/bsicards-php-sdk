@@ -1,5 +1,5 @@
 {
-  "name": "bsigroup/bsicards-sdk",
+  "name": "nash81/bsicards-php-sdk",
   "description": "PHP SDK for BSICARDS - Card Issuance API",
   "type": "library",
   "version": "1.0.0",

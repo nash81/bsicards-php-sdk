@@ -2,7 +2,7 @@
 
 ## Installation
 ```bash
-composer require your-username/bsicards-php-sdk
+composer require nash81/bsicards-php-sdk
 ```
 
 ## Basic Setup
@@ -182,7 +182,7 @@ $secret = $client->getSecretKey();
 
 - Email: support@bsigroup.tech
 - Website: https://www.bsigroup.tech
-- GitHub: https://github.com/your-username/bsicards-php-sdk
+- GitHub: https://github.com/nash81/bsicards-php-sdk
 
 ---
 

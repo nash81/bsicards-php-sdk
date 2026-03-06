@@ -3,7 +3,7 @@
 ## 1. Installation (1 minute)
 
 ```bash
-composer require bsigroup/bsicards-sdk
+composer require nash81/bsicards-php-sdk
 ```
 
 ## 2. Configuration (1 minute)
