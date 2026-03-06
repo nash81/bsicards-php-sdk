@@ -2,7 +2,7 @@
 
 A comprehensive PHP SDK for integrating with the BSICARDS Card Issuance API. Create and manage Mastercard, Visa, and Digital Wallet cards with ease.
 
-[![PHP Version](https://img.shields.io/badge/php-%3E%3D7.4-brightgreen)](https://www.php.net/)
+[![PHP Version](https://img.shields.io/badge/php-%3E%3D8.1-brightgreen)](https://www.php.net/)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![Composer](https://img.shields.io/badge/composer-available-brightgreen)](https://packagist.org/)
 
@@ -32,6 +32,23 @@ A comprehensive PHP SDK for integrating with the BSICARDS Card Issuance API. Cre
 ```bash
 composer require nash81/bsicards-php-sdk
 ```
+
+### Packagist Auto-Update Setup
+
+If Packagist shows "This package is not auto-updated", set up one of the following:
+
+1. GitHub Hook (recommended by Packagist)
+   - Open your package on Packagist
+   - Click `Update` / `Auto Update`
+   - Connect your GitHub repository (`nash81/bsicards-php-sdk`)
+   - Packagist will create/manage the webhook
+
+2. GitHub Actions fallback (included in this repo)
+   - Add these GitHub repository secrets:
+     - `PACKAGIST_USERNAME`
+     - `PACKAGIST_TOKEN`
+     - `PACKAGIST_PACKAGE_URL` (example: `https://packagist.org/packages/nash81/bsicards-php-sdk`)
+   - Workflow file: `.github/workflows/packagist-update.yml`
 
 ### Manual Setup
 
@@ -310,4 +327,3 @@ See [CHANGELOG.md](CHANGELOG.md) for version history.
 ## Disclaimer
 
 This SDK is provided as-is. Always test in a sandbox environment before production use.
-

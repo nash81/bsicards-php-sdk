@@ -2,8 +2,13 @@
   "name": "nash81/bsicards-php-sdk",
   "description": "PHP SDK for BSICARDS - Card Issuance API",
   "type": "library",
-  "version": "1.0.0",
   "license": "MIT",
+  "homepage": "https://github.com/nash81/bsicards-php-sdk",
+  "support": {
+    "email": "cs@bsigroup.tech",
+    "source": "https://github.com/nash81/bsicards-php-sdk",
+    "issues": "https://github.com/nash81/bsicards-php-sdk/issues"
+  },
   "keywords": [
     "bsicards",
     "card-issuance",
@@ -47,4 +52,3 @@
     "analyse": "phpstan analyse --configuration=phpstan.neon"
   }
 }
-

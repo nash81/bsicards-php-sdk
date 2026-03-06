@@ -1,0 +1,22 @@
+name: Packagist Update
+
+on:
+  push:
+    branches: [ main ]
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  notify-packagist:
+    runs-on: ubuntu-latest
+    if: ${{ secrets.PACKAGIST_USERNAME != '' && secrets.PACKAGIST_TOKEN != '' && secrets.PACKAGIST_PACKAGE_URL != '' }}
+
+    steps:
+      - name: Trigger Packagist update
+        run: |
+          curl -X POST \
+            -H "Content-Type:application/json" \
+            "https://packagist.org/api/update-package?username=${{ secrets.PACKAGIST_USERNAME }}&apiToken=${{ secrets.PACKAGIST_TOKEN }}" \
+            -d "{\"repository\":{\"url\":\"${{ secrets.PACKAGIST_PACKAGE_URL }}\"}}"
+

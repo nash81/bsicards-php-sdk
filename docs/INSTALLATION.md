@@ -128,3 +128,17 @@ On Windows, you may need to download CA certificates:
 - Email: cs@bsigroup.tech
 - Website: https://www.bsigroup.tech
 
+## Packagist Auto-Update
+
+If Packagist says your package is not auto-updated, enable one-time setup:
+
+1. In Packagist, open package `nash81/bsicards-php-sdk`
+2. Use `Update` / `Auto Update` and connect GitHub repository
+3. Confirm webhook is active in GitHub repository settings
+
+Optional fallback (already added in this SDK):
+- Workflow: `.github/workflows/packagist-update.yml`
+- Add GitHub repository secrets:
+  - `PACKAGIST_USERNAME`
+  - `PACKAGIST_TOKEN`
+  - `PACKAGIST_PACKAGE_URL` (example: `https://packagist.org/packages/nash81/bsicards-php-sdk`)
