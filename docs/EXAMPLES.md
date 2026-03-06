@@ -151,14 +151,6 @@ $response = $client->digitalCreateVirtualCard(
 );
 ```
 
-### Get USDT Deposit Address
-
-```php
-$address = $client->digitalGetUSDTAddress('user@example.com');
-
-echo "USDT Address: " . $address['data']['address'];
-echo "Network: " . $address['data']['network'];  // e.g., 'tron'
-```
 
 ## Laravel Examples
 

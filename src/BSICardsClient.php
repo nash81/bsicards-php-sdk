@@ -513,20 +513,6 @@ class BSICardsClient
         ]);
     }
 
-    /**
-     * Get USDT deposit address for Digital Wallet
-     *
-     * @param string $userEmail User email
-     *
-     * @return array API response
-     * @throws APIException
-     */
-    public function digitalGetUSDTAddress(string $userEmail): array
-    {
-        return $this->post('usdtaddress', [
-            'useremail' => $userEmail,
-        ]);
-    }
 
     /**
      * Fund a Digital Wallet card

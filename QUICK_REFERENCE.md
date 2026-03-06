@@ -54,7 +54,6 @@ BSICARDS_SECRET_KEY=your_secret
 | `digitalGetAllCards($email)` | Get all cards |
 | `digitalGetCard($email, $cardId)` | Get card details |
 | `digitalGetTransactions($email, $cardId)` | View transactions |
-| `digitalGetUSDTAddress($email)` | Get USDT address |
 | `digitalFundCard($email, $cardId, $amount)` | Fund card |
 | `digitalFreezeCard($email, $cardId)` | Freeze card |
 | `digitalUnfreezeCard($email, $cardId)` | Unfreeze card |

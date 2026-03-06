@@ -340,17 +340,6 @@ $response = $client->digitalGetTransactions(
 
 ---
 
-### Get USDT Deposit Address
-
-```php
-$response = $client->digitalGetUSDTAddress(
-    string $userEmail
-): array
-```
-
-Returns the TRON network address for USDT deposits.
-
----
 
 ### Fund Digital Card
 

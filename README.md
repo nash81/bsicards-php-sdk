@@ -219,8 +219,6 @@ $client->digitalGetCard($email, $cardId);
 // Get transactions
 $client->digitalGetTransactions($email, $cardId);
 
-// Get USDT deposit address
-$client->digitalGetUSDTAddress($email);
 
 // Fund card
 $client->digitalFundCard($email, $cardId, $amount);
