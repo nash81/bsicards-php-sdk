@@ -30,6 +30,14 @@ A comprehensive PHP SDK for integrating with the BSICARDS Card Issuance API. Cre
 ### Via Composer
 
 ```bash
+composer require nash81/bsicards-php-sdk:^1.0
+```
+
+This package now publishes stable semantic version tags. The first stable release is `v1.0.0`, so Composer can resolve it normally without lowering your project's stability settings.
+
+If you prefer, installing without an explicit constraint will also resolve the latest stable release:
+
+```bash
 composer require nash81/bsicards-php-sdk
 ```
 

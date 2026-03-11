@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Initial release of BSICARDS PHP SDK
+- Initial stable release of BSICARDS PHP SDK (`v1.0.0`)
 - Full support for MasterCard issuance and management
 - Full support for Visa card issuance and management
 - Full support for Digital Wallet card creation and management
@@ -17,12 +17,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Card transaction history retrieval
 - Card management (freeze, unfreeze, PIN change)
 - Card funding functionality
-- USDT deposit address retrieval for Digital Wallet
 - Laravel 5.5+ service provider auto-discovery
 - Environment-based configuration (via .env)
 - Comprehensive error handling with APIException
 - Full PHPDoc documentation
-- Type hints for all methods (PHP 7.4+)
+- Type hints for all methods (PHP 8.1+)
 - GuzzleHTTP 7.0+ integration
 - Composer package support
 - MIT License
