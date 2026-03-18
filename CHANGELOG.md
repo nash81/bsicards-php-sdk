@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2026-03-18
+
+### Added
+
+- **Digital Visa Wallet Cards** — New category of virtual Visa cards with 3DS auto-approve, Google Pay, and Apple Pay support
+  - `visaWalletCreateVirtualCard($email, $firstName, $lastName)` — Create a new virtual Visa wallet card
+  - `visaWalletGetAllCards($email)` — List all Digital Visa Wallet cards for a user
+  - `visaWalletGetCard($email, $cardId)` — Get full card details (number, CVV, expiry, transactions)
+  - `visaWalletFundCard($email, $cardId, $amount)` — Fund a card (minimum $5.00)
+  - `visaWalletGetOTP($email, $cardId)` — Retrieve OTP for GPay/Apple Pay provisioning
+  - `visaWalletBlockCard($email, $cardId)` — Block (freeze) a card
+  - `visaWalletUnblockCard($email, $cardId)` — Unblock (unfreeze) a card
+- Updated API documentation (`docs/API.md`) with full Digital Visa Wallet section
+- Updated examples documentation (`docs/EXAMPLES.md`) with Digital Visa Wallet code samples
+- Updated README with Digital Visa Wallet features and API method reference
+
 ## [1.0.0] - 2026-03-06
 
 ### Added
