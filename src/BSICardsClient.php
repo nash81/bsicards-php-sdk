@@ -905,5 +905,139 @@ class BSICardsClient
     {
         return $this->secretKey;
     }
+    // ========================
+    // WALLET AS A SERVICE
+    // ========================
+
+    /**
+     * Get available swap currencies
+     * GET /exchange/currencies
+     * @return array
+     * @throws APIException
+     */
+    public function swapGetCurrencies(): array
+    {
+        return $this->get('exchange/currencies');
+    }
+
+    /**
+     * Get swap status
+     * GET /exchange/status?transaction_id=...
+     * @param string $transactionId
+     * @return array
+     * @throws APIException
+     */
+    public function swapGetStatus(string $transactionId): array
+    {
+        return $this->get('exchange/status', ['transaction_id' => $transactionId]);
+    }
+
+    /**
+     * Get swap estimate
+     * POST /exchange/estimate
+     * @param string $from
+     * @param string $to
+     * @param string $networkFrom
+     * @param string $networkTo
+     * @param float $amount
+     * @return array
+     * @throws APIException
+     */
+    public function swapGetEstimate(string $from, string $to, string $networkFrom, string $networkTo, float $amount): array
+    {
+        return $this->post('exchange/estimate', [
+            'from' => $from,
+            'to' => $to,
+            'network_from' => $networkFrom,
+            'network_to' => $networkTo,
+            'amount' => $amount,
+        ]);
+    }
+
+    /**
+     * Create swap transaction
+     * POST /exchange/create
+     * @param string $coinFrom
+     * @param string $coinTo
+     * @param string $networkFrom
+     * @param string $networkTo
+     * @param float $depositAmount
+     * @param string $withdrawal
+     * @param string $withdrawalExtraId
+     * @return array
+     * @throws APIException
+     */
+    public function swapCreate(string $coinFrom, string $coinTo, string $networkFrom, string $networkTo, float $depositAmount, string $withdrawal, string $withdrawalExtraId = 'NA'): array
+    {
+        return $this->post('exchange/create', [
+            'coin_from' => $coinFrom,
+            'coin_to' => $coinTo,
+            'network_from' => $networkFrom,
+            'network_to' => $networkTo,
+            'deposit_amount' => $depositAmount,
+            'withdrawal' => $withdrawal,
+            'withdrawal_extra_id' => $withdrawalExtraId,
+        ]);
+    }
+
+    /**
+     * Create a new wallet address
+     * POST /wallet/create-address
+     * @param string $userEmail
+     * @param string $coin
+     * @return array
+     * @throws APIException
+     */
+    public function walletCreateAddress(string $userEmail, string $coin): array
+    {
+        return $this->post('wallet/create-address', [
+            'useremail' => $userEmail,
+            'coin' => $coin,
+        ]);
+    }
+
+    /**
+     * Get all wallet addresses for a user
+     * GET /wallet/addresses
+     * @param string $userEmail
+     * @return array
+     * @throws APIException
+     */
+    public function walletGetAllAddresses(string $userEmail): array
+    {
+        // The API expects useremail in the body, but it's a GET request. We'll use query param.
+        return $this->get('wallet/addresses', ['useremail' => $userEmail]);
+    }
+
+    /**
+     * Get a specific wallet address
+     * GET /wallet/address/{uuid}?useremail=...
+     * @param string $uuid
+     * @param string $userEmail
+     * @return array
+     * @throws APIException
+     */
+    public function walletGetAddress(string $uuid, string $userEmail): array
+    {
+        $endpoint = 'wallet/address/' . $uuid;
+        return $this->get($endpoint, ['useremail' => $userEmail]);
+    }
+
+    /**
+     * Get wallet balance for a specific address
+     * GET /wallet/balance?uuid=...&useremail=...
+     * @param string $uuid
+     * @param string $userEmail
+     * @return array
+     * @throws APIException
+     */
+    public function walletGetBalance(string $uuid, string $userEmail): array
+    {
+        return $this->get('wallet/balance', [
+            'uuid' => $uuid,
+            'useremail' => $userEmail,
+        ]);
+    }
+
 }
 

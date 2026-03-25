@@ -296,6 +296,22 @@ $mastercards = $client->getAllMastercards();
 $digitalCards = $client->getAllDigitalCards();
 ```
 
+### Wallet as a Service Operations
+
+```php
+// Swap endpoints
+$currencies = $client->swapGetCurrencies();
+$status = $client->swapGetStatus('transaction_id_here');
+$estimate = $client->swapGetEstimate('BTC', 'USDT-TRC20', 'BTC', 'TRC20', 0.5);
+$swap = $client->swapCreate('BTC', 'USDT-TRC20', 'BTC', 'TRC20', 0.5, 'THUnQJKECXP82EjijVVHpUwFMd3Y3vGBQJ');
+
+// Wallet endpoints
+$address = $client->walletCreateAddress('user@example.com', 'PAXG');
+$addresses = $client->walletGetAllAddresses('user@example.com');
+$specificAddress = $client->walletGetAddress('uuid_here', 'user@example.com');
+$balance = $client->walletGetBalance('uuid_here', 'user@example.com');
+```
+
 ## Error Handling
 
 ```php

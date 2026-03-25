@@ -49,5 +49,17 @@ class BSICardsClientTest extends TestCase
         $this->expectException(\InvalidArgumentException::class);
         new BSICardsClient('public_key_only', null);
     }
+
+    public function testWalletAsAServiceMethodsExist()
+    {
+        $this->assertTrue(method_exists($this->client, 'swapGetCurrencies'));
+        $this->assertTrue(method_exists($this->client, 'swapGetStatus'));
+        $this->assertTrue(method_exists($this->client, 'swapGetEstimate'));
+        $this->assertTrue(method_exists($this->client, 'swapCreate'));
+        $this->assertTrue(method_exists($this->client, 'walletCreateAddress'));
+        $this->assertTrue(method_exists($this->client, 'walletGetAllAddresses'));
+        $this->assertTrue(method_exists($this->client, 'walletGetAddress'));
+        $this->assertTrue(method_exists($this->client, 'walletGetBalance'));
+    }
 }
 
