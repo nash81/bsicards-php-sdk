@@ -61,5 +61,11 @@ class BSICardsClientTest extends TestCase
         $this->assertTrue(method_exists($this->client, 'walletGetAddress'));
         $this->assertTrue(method_exists($this->client, 'walletGetBalance'));
     }
-}
 
+    public function testWalletWithdrawalMethodsExist()
+    {
+        $this->assertTrue(method_exists($this->client, 'walletGetWithdrawalFee'));
+        $this->assertTrue(method_exists($this->client, 'walletWithdraw'));
+        $this->assertTrue(method_exists($this->client, 'walletGetWithdrawalStatus'));
+    }
+}

@@ -1039,5 +1039,69 @@ class BSICardsClient
         ]);
     }
 
-}
+    /**
+     * Get withdrawal fee for a wallet withdrawal
+     * POST /wallet/withdrawal-fee
+     * @param string $uuid
+     * @param string $toAddress
+     * @param float $amount
+     * @param string $coin
+     * @param string $userEmail
+     * @return array
+     * @throws APIException
+     */
+    public function walletGetWithdrawalFee(string $uuid, string $toAddress, float $amount, string $coin, string $userEmail): array
+    {
+        return $this->post('wallet/withdrawal-fee', [
+            'uuid' => $uuid,
+            'to_address' => $toAddress,
+            'amount' => (string)$amount,
+            'coin' => $coin,
+            'useremail' => $userEmail,
+        ]);
+    }
 
+    /**
+     * Withdraw from wallet
+     * POST /wallet/withdraw
+     * @param string $uuid
+     * @param string $toAddress
+     * @param float $amount
+     * @param string $coin
+     * @param string $userEmail
+     * @param string|null $memo (optional, for XRP only)
+     * @return array
+     * @throws APIException
+     */
+    public function walletWithdraw(string $uuid, string $toAddress, float $amount, string $coin, string $userEmail, ?string $memo = null): array
+    {
+        $body = [
+            'uuid' => $uuid,
+            'to_address' => $toAddress,
+            'amount' => (string)$amount,
+            'coin' => $coin,
+            'useremail' => $userEmail,
+        ];
+        if ($memo !== null) {
+            $body['memo'] = $memo;
+        }
+        return $this->post('wallet/withdraw', $body);
+    }
+
+    /**
+     * Get withdrawal status
+     * POST /wallet/withdrawal-status
+     * @param string $txHash
+     * @param string $coin
+     * @return array
+     * @throws APIException
+     */
+    public function walletGetWithdrawalStatus(string $txHash, string $coin): array
+    {
+        return $this->post('wallet/withdrawal-status', [
+            'tx_hash' => $txHash,
+            'coin' => $coin,
+        ]);
+    }
+
+}
